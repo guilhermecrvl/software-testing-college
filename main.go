@@ -57,7 +57,7 @@ func formatResult(name string, num int, sum int) string {
 
 func main() {
 	r := chi.NewRouter()
-	r.Get("/sum/efficient/{num}", sumEfficientHandler)
+	r.Get("/sum/efficient/{num:[0-9]+}", sumEfficientHandler)
 	r.Get("/sum/inefficient/{num:[0-9]+}", sumInefficientHandler)
 
 	fmt.Println("HTTP server started on :3030")
